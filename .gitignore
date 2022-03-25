@@ -10,3 +10,6 @@
 
 # pod folder
 Pods/
+
+# plist with env variables
+ios-instagram-clone-Info.plist

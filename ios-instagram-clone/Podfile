@@ -1,4 +1,7 @@
 target 'ios-instagram-clone' do
+  # required for parse
+  use_frameworks!
+
   # Add Parse pods and install
   pod 'Parse'
   pod 'AlamofireImage'

@@ -6,14 +6,56 @@
 //
 
 import UIKit
+import Parse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    // get secrets
+    
+    private var appId: String {
+      get {
+        // 1
+        guard let filePath = Bundle.main.path(forResource: "ios-instagram-clone-Info", ofType: "plist") else {
+          fatalError("Couldn't find file 'ios-instagram-clone-Info'.")
+        }
+        // 2
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "APP_ID") as? String else {
+          fatalError("Couldn't find key 'APP_ID' in 'ios-instagram-clone-Info'.")
+        }
+        return value
+      }
+    }
+    
+    private var clientKey: String {
+      get {
+        // 1
+        guard let filePath = Bundle.main.path(forResource: "ios-instagram-clone-Info", ofType: "plist") else {
+          fatalError("Couldn't find file 'ios-instagram-clone-Info'.")
+        }
+        // 2
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "CLIENT_KEY") as? String else {
+          fatalError("Couldn't find key 'CLIENT_KEY' in 'ios-instagram-clone-Info'.")
+        }
+        return value
+      }
+    }
 
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let parseConfig = ParseClientConfiguration {
+            $0.applicationId = self.appId
+            $0.clientKey = self.clientKey
+                    $0.server = "https://parseapi.back4app.com"
+            }
+            Parse.initialize(with: parseConfig)
+        
         return true
     }
 
