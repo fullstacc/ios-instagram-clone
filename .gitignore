@@ -1,0 +1,9 @@
+# assets
+*.xcassets/
+
+#.DS_Store
+.DS_Store
+
+# images
+*.jpg
+*.png
