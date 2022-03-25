@@ -1,0 +1,15 @@
+# assets
+*.xcassets/
+
+#.DS_Store
+.DS_Store
+
+# images
+*.jpg
+*.png
+
+# pod folder
+Pods/
+
+# plist with env variables
+ios-instagram-clone-Info.plist
