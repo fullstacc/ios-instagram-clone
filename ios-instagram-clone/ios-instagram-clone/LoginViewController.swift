@@ -11,9 +11,7 @@ import Parse
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     
     
     override func viewDidLoad() {
@@ -27,7 +25,8 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
         
-        PFUser.logInWithUsername(inBackground: username, password: password) { user, error in
+        PFUser.logInWithUsername(inBackground: username, password: password)
+        { (user, error) in
             if user != nil {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
