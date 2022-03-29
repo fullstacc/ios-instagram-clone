@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="83.705357142857139"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--FeedViewController-->
         <scene sceneID="z48-Ma-fn4">
             <objects>
-                <viewController id="iK4-mT-Mm6" customClass="FeedViewController" customModule="ios_instagram_clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" title="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iK4-mT-Mm6" customClass="FeedViewController" customModule="ios_instagram_clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ooe-CA-k1o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
